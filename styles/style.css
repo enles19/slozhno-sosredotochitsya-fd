@@ -2,4 +2,349 @@
 
 .page {
   /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
+
+  background-image: var(--background-image);
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  background-color: var(--background-color);
+  font-family: var(--main-font), sans-serif;
+  color: var(--main-color);
+  padding-inline: var(--padding-small);
+}
+
+.header {
+  position: relative;
+  block-size: 100vh;
+  min-block-size: 668px;
+  display: grid;
+  grid-template-rows: 1fr min-content 1fr;
+}
+
+.decorated-zone::before {
+  content: "";
+  width: 25px;
+  height: 25px;
+  border-top: 1px solid var(--d-color);
+  border-right: 1px solid var(--d-color);
+  position: absolute;
+  top: var(--padding-small);
+  right: 0;
+}
+
+.decorated-zone::after {
+  content: "";
+  width: 25px;
+  height: 25px;
+  border-bottom: 1px solid var(--d-color);
+  border-left: 1px solid var(--d-color);
+  position: absolute;
+  bottom: var(--padding-small);
+  left: 0;
+}
+
+.rec {
+  position: absolute;
+  top: var(--padding-small);
+  right: 28px;
+  color: var(--accent-color);
+}
+
+.rec::after {
+  content: "";
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background-color: #ff0070;
+  box-shadow: 0 0 4px 2px #ff0070;
+  position: absolute;
+  left: 39px;
+  top: 8px;
+}
+
+.header__theme-menu {
+  margin-block-start: 8px;
+  justify-self: end;
+  align-self: center;
+  margin-inline-end: 20px;
+}
+
+.header__theme-menu-list {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+}
+
+.header__theme-menu-item {
+  padding-inline: 5px;
+}
+
+.header__theme-menu-button {
+  background-color: transparent;
+  border: none;
+  color: var(--accent-color);
+  text-transform: lowercase;
+  line-height: 18px;
+  padding-inline: 30%;
+  padding-block: 3px;
+}
+
+.header__theme-menu-button,
+.link {
+  cursor: pointer;
+}
+
+.header__theme-menu-button:hover {
+  outline: 1px solid rgb(255 0 112 / 0.4);
+}
+
+.header__theme-menu-button_active {
+  border: 1px solid var(--accent-color);
+  pointer-events: none;
+}
+
+.header__theme-menu-button:focus-visible {
+  outline: none;
+  border-bottom: 1px solid var(--accent-color);
+}
+
+.title {
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  color: var(--title-color);
+  text-shadow: 4px 4px 0 var(--accent-color);
+  line-height: 83%;
+}
+
+.header .title {
+  justify-self: start;
+  align-self: end;
+}
+
+.header .subtitle {
+  justify-self: end;
+  align-self: center;
+  font-weight: 700;
+  margin-block-end: 10px;
+}
+
+.title-decor {
+  background-color: var(--accent-color);
+  color: var(--subtitles-color);
+}
+
+.sections {
+  margin-block: var(--padding-large);
+  gap: var(--padding-small);
+}
+
+.content {
+  display: grid;
+  gap: 20px;
+  font-weight: 400;
+  line-height: 23.4px;
+  margin-block-end: var(--padding-large);
+}
+
+.link {
+  text-decoration: none;
+  text-shadow: 1px 1px 0 var(--accent-color);
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+.link:focus-visible {
+  outline: 1px solid currentColor;
+}
+
+.section__title {
+  color: var(--d-color);
+}
+
+.list,
+.images-gallery {
+  display: grid;
+  gap: var(--padding-small);
+}
+
+.list-item {
+  display: grid;
+  gap: var(--padding-small);
+  margin-block-end: var(--padding-small);
+}
+
+.subtitle:not(.header .subtitle) {
+  margin-block-end: 20px;
+}
+
+.gallery-section {
+  gap: var(--padding-small);
+}
+
+.image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.footer {
+  position: relative;
+  display: grid;
+  block-size: 100vh;
+  min-block-size: 668px;
+}
+
+.footer .title {
+  justify-self: center;
+  align-self: center;
+}
+
+@media (width >= 768px) {
+  :root {
+    --padding-middle: 60px;
+    --padding-large: 70px;
+  }
+
+  .page {
+    padding-inline: 20px;
+  }
+
+  .header {
+    grid-template-columns: 1fr 1fr;
+    padding-block: 10px;
+  }
+
+  .rec,
+  .decorated-zone::before,
+  .decorated-zone::after {
+    --padding-small: 20px;
+  }
+
+  .header__theme-menu {
+    grid-column: 2;
+  }
+
+  .title {
+    grid-column: span 2;
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  }
+
+  .header .title {
+    margin-inline-start: -20px;
+  }
+
+  .header .subtitle {
+    grid-column: 2;
+  }
+
+  .sections {
+    margin-block: var(--padding-middle);
+  }
+
+  .focus-section,
+  .advice-section {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .focus-section .section__title,
+  .advice-section .section__title {
+    grid-column: 1;
+  }
+
+  .focus-section .list,
+  .advices {
+    grid-column: 2 / 4;
+    margin-inline-start: 7px;
+  }
+
+  .concentration-section {
+    grid-template-rows: 70px repeat(3, 1fr);
+    grid-auto-rows: 1fr;
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .concentration-section .section__title {
+    grid-row: 1;
+    grid-column: 1 / 2;
+  }
+
+  .concentration-section .list {
+    grid-row: 2 / 5;
+    grid-column: 1 / 5;
+  }
+
+  .advices .subtitle {
+    margin-block: 0 20px;
+  }
+
+  .gallery-section {
+    --padding-small: 20px;
+    margin-block-end: var(--padding-middle);
+  }
+
+  .images-gallery {
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-flow: dense;
+  }
+
+  .image:nth-of-type(1) {
+    grid-column: 1 / 3;
+    grid-row: 1;
+  }
+
+  .image:nth-of-type(2) {
+    grid-column: 3 / 4;
+    grid-row: 1 / 3;
+  }
+
+  .image:nth-of-type(3) {
+    grid-column: 1 / 2;
+    grid-row: 2 / 4;
+  }
+
+  .image:nth-of-type(4) {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+  }
+
+  .image:nth-of-type(5) {
+    grid-column: 2 / 4;
+    grid-row: 3 / 4;
+  }
+}
+
+@media (width >= 1024px) {
+  .header__theme-menu {
+    grid-column: 1 / 3;
+    align-self: start;
+    justify-self: center;
+  }
+
+  .header__theme-menu-list {
+    flex-direction: row;
+    gap: 33px;
+  }
+
+  .concentration-section {
+    grid-template-rows: min-content 1fr;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .concentration-section .list {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .concentration-section .list-item {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .focus-section .list,
+  .advices {
+    margin-inline-start: 0;
+  }
 }
