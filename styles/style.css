@@ -10,7 +10,6 @@
   background-color: var(--background-color);
   font-family: var(--main-font), sans-serif;
   color: var(--main-color);
-  padding-inline: var(--padding-small);
 }
 
 .header {
@@ -21,6 +20,10 @@
   grid-template-rows: 1fr min-content 1fr;
 }
 
+.decorated-zone {
+  padding-inline: var(--padding-small);
+}
+
 .decorated-zone::before {
   content: "";
   width: 25px;
@@ -29,7 +32,7 @@
   border-right: 1px solid var(--d-color);
   position: absolute;
   top: var(--padding-small);
-  right: 0;
+  right: var(--padding-small);
 }
 
 .decorated-zone::after {
@@ -40,14 +43,15 @@
   border-left: 1px solid var(--d-color);
   position: absolute;
   bottom: var(--padding-small);
-  left: 0;
+  left: var(--padding-small);
 }
 
 .rec {
   position: absolute;
   top: var(--padding-small);
-  right: 28px;
+  right: 38px;
   color: var(--accent-color);
+  text-transform: uppercase;
 }
 
 .rec::after {
@@ -134,6 +138,7 @@
 
 .sections {
   margin-block: var(--padding-large);
+  padding-inline: var(--padding-small);
   gap: var(--padding-small);
 }
 
@@ -208,13 +213,17 @@
     --padding-large: 70px;
   }
 
-  .page {
-    padding-inline: 20px;
-  }
-
   .header {
     grid-template-columns: 1fr 1fr;
     padding-block: 10px;
+  }
+
+  .decorated-zone {
+    padding-inline: 20px;
+  }
+
+  .rec {
+    right: 48px;
   }
 
   .rec,
@@ -242,6 +251,7 @@
 
   .sections {
     margin-block: var(--padding-middle);
+    padding-inline: 20px;
   }
 
   .focus-section,
