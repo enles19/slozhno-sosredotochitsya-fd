@@ -8,12 +8,22 @@
   --main-font: 'IBM Plex mono';
   --title-color: #DB00FF;
   --main-color: #F1B2CE;
-  --d-color: #FF0070;
+  --different-color: #FF0070;
   --subtitles-color: #000028;
   --accent-color: #FF0070;
+  --menu-color: #FF0070;
 
   --padding-small: 10px;
   --padding-middle: 20px;
   --padding-large: 40px;
 
+  --display: flex;
+
+}
+
+@media (width >= 768px) {
+  :root {
+    --padding-middle: 60px;
+    --padding-large: 70px;
+  }
 }
