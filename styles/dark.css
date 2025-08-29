@@ -16,11 +16,8 @@
   --different-color: #ff0070;
   --subtitles-color: #000028;
   --accent-color: #ff0070;
-  --menu-color: #FF0070;
+  --menu-color: #ff0070;
+  --semi-transparent-color: rgb(255 0 112 / 0.4);
 
   --display: flex;
-}
-
-.theme-dark .header__theme-menu-button:hover {
-  outline: 1px solid rgb(255 0 112 / 0.4);
 }

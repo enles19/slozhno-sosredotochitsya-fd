@@ -5,20 +5,20 @@
 :root {
   --background-image: url(../images/cover-image-dark.png);
   --background-color: #000028;
-  --main-font: 'IBM Plex mono';
-  --title-color: #DB00FF;
-  --main-color: #F1B2CE;
-  --different-color: #FF0070;
+  --main-font: "IBM Plex mono";
+  --title-color: #db00ff;
+  --main-color: #f1b2ce;
+  --different-color: #ff0070;
   --subtitles-color: #000028;
-  --accent-color: #FF0070;
-  --menu-color: #FF0070;
+  --accent-color: #ff0070;
+  --menu-color: #ff0070;
+  --semi-transparent-color: rgb(255 0 112 / 0.4);
 
   --padding-small: 10px;
   --padding-middle: 20px;
   --padding-large: 40px;
 
   --display: flex;
-
 }
 
 @media (width >= 768px) {

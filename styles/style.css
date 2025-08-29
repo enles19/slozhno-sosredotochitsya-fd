@@ -54,6 +54,7 @@
   color: var(--accent-color);
   text-transform: uppercase;
   line-height: 25px;
+  font-size: 18px;
 }
 
 .rec::after {
@@ -64,7 +65,7 @@
   background-color: #ff0070;
   box-shadow: 0 0 4px 2px #ff0070;
   position: absolute;
-  left: 39px;
+  left: 42px;
   top: 8px;
 }
 
@@ -83,6 +84,7 @@
 .header__theme-menu-button {
   background-color: transparent;
   border: none;
+  font-size: 18px;
   color: var(--menu-color);
   text-transform: lowercase;
   line-height: 18px;
@@ -96,7 +98,7 @@
 }
 
 .header__theme-menu-button:hover {
-  outline: 1px solid rgb(255 0 112 / 0.4);
+  outline: 1px solid var(--semi-transparent-color);
 }
 
 .header__theme-menu-button_active {
@@ -210,7 +212,6 @@
 }
 
 @media (width >= 768px) {
-  
   .header {
     grid-template-columns: 1fr 1fr;
     padding-block: 10px;
@@ -333,7 +334,7 @@
 
   .header__theme-menu-list {
     flex-direction: row;
-    gap: 16px;
+    gap: 10px;
   }
 
   .concentration-section {
